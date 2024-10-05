@@ -1,15 +1,14 @@
-import os
-from dotenv import load_dotenv, dotenv_values
 import asyncio
 import logging
+import env
 
 from aiogram import Bot
 from aiogram import Dispatcher
 from aiogram import types
 from aiogram.filters import CommandStart, Command
 
-load_dotenv()
-bot = Bot(token=os.getenv("BOT_TOKEN"))
+
+bot = Bot(token=env.BOT_TOKEN)
 dp = Dispatcher()
 
 @dp.message(CommandStart())
